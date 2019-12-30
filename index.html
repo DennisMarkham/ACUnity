@@ -15,31 +15,12 @@
 <!-- Latest compiled JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 
-<style>
-	body {
-		background-color: rgba(0, 0, 0, 0.7);
-	}
+ <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
 
-	.carousel img
-	{
-		border-radius: 10px;
-		overflow: hidden;
-		margin-bottom: 40px;
-		margin-top: 40px;
-	}
-
-	nav
-	{
-		background-color: rgba(0, 0, 0, 0.6);
-	}
-
-
-
-
-</style>
+<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
-<body>
+<body onload="fillNews();">
 
 <div id = "content">
 <!-- NAVBAR -->
@@ -52,13 +33,13 @@
   <!-- Links -->
   <ul class="navbar-nav">
     <li class="nav-item">
-      <a class="nav-link" href="#">Link 1</a>
+      <a class="nav-link" href="#">About</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="#">Link 2</a>
+      <a class="nav-link" href="#">Forum</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="#">Link 3</a>
+      <a class="nav-link" href="#">Buy Now</a>
     </li>
   </ul>
 </nav>
@@ -120,5 +101,23 @@ News
 <!-- NEWS -->
 
 </div>
+
+<script>
+  function fillNews (){
+
+$("#news").empty();
+
+    $.get("/api/news", function(data) {
+        console.log(data);
+
+for (var i = 0; i < data.length; i++) 
+        {
+          $("#news").append("<hr>" + data[i].News + "<br>" + data[i].dayt);
+          // console.log( moment(data[i]dayt, 'YYYY-MM-DD HH:MI:SS').format('YYYY-MM-DD'));
+          //just having this script here breaks the program for some reason
+    }
+})
+  }
+</script>
 </body>
 </html>

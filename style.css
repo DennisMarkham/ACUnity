@@ -1,0 +1,33 @@
+body {
+		background-color: rgba(0, 0, 0, 0.7);
+	}
+
+.carousel img
+{
+	border-radius: 10px;
+	overflow: hidden;
+	margin-bottom: 40px;
+	margin-top: 40px;
+}
+
+nav
+{
+	background-color: rgba(0, 0, 0, 0.6);
+}
+
+
+
+#picture
+{
+	float:right;
+}
+
+#orderOptions
+{
+	float:left;
+}
+
+#overallContainer
+{
+	height: 250px;
+}
